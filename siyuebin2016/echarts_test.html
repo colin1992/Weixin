@@ -1,0 +1,48 @@
+﻿<html>
+	<head>
+	<script src="echarts.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="container" style="height:500px;border:1px solid #ccc;padding:10px;"></div>
+	</body>
+	<script>
+	    var myChart = echarts.init(document.getElementById("container")); 
+		option = {
+		    title: {
+		        text: '光功率实时显示'
+		    },
+		    toolbox: {
+		        show : true,
+		        feature : {
+		            dataView : {
+		            	 		show: true, 
+		            	        readOnly: false,
+		            	        
+		            	        },
+		            saveAsImage : {show: true},
+		            dataZoom: {
+	                    yAxisIndex: 'none'
+	                    	},
+	                restore: {}, 
+		        }
+		    },
+		    xAxis: {
+		        type: 'time',
+		        name: '时间',
+		        splitLine: {
+		            show: true
+		        }
+		    },
+		    yAxis: {
+		        type: 'value',
+		        name: '光功率值(db)',
+		        boundaryGap: [0, '100%'],
+		        splitLine: {
+		            show: true
+		        }
+		    },
+		    series: []
+		};	
+myChart.setOption(option);
+	</script>
+</html>
